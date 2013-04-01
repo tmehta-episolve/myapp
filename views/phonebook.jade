@@ -1,0 +1,12 @@
+extends layout
+block content
+ p #{title}
+ div
+  table
+   tr
+     th ID
+     th Name
+       each phone, i in phonebook
+         tr
+           td hi
+           td #{phone.name}
