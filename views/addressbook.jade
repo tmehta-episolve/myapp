@@ -1,0 +1,14 @@
+extends layout
+block content
+ p #{title}
+ div
+  table
+   thead
+    tr
+     th ID
+     th Name
+      tbody
+       each addbooks, i in adds
+        tr
+         td #{addbooks._id}
+         td #{addbooks.name}         

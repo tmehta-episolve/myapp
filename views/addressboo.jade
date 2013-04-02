@@ -1,0 +1,18 @@
+extends layout
+block content
+ p #{title}
+ div
+  table
+   thead
+    tr
+     th ID
+     th Car Name
+     th Color
+     th Company
+      tbody
+       each car, i in cars
+        tr
+         td #{car.pk_id}
+         td #{car.car_name}
+         td #{car.color}
+         td #{car.company}

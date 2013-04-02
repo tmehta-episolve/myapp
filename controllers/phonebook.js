@@ -10,3 +10,15 @@ exports.list = function(req, res) {
     });
  });
 }
+
+exports.add = function (req, res) {
+  var phonedata = new PhoneBook(req.body);
+  phonedata.save(function (err) {
+    if(err) {
+      console.log(err)
+    } else {
+      res.redirect('/phonebook');
+      console.log(phonedata);
+    }
+ });
+}

@@ -2,11 +2,29 @@ extends layout
 block content
  p #{title}
  div
+  form.form-horizontal(method="post", action='/phonebook/add', enctype="multipart/form-data")
+   .control-group
+     label.control-label(for='name')Name
+       .controls
+         input#title.input-input-xlarge(type='text', name="name", placeholder='Enter your name')
+   .control-group
+     label.control-label(for='phone_number')Number
+       .controls
+         input#title.input-input-xlarge(type='text', name="phone_number", placeholder='Enter your number')
+   .control-group
+     .controls
+       input(type='submit',value='Save')
+
+  br
+  br
+
   table
    tr
      th ID
      th Name
+     th Number
        each phone, i in phonebook
          tr
-           td hi
+           td #{phone._id}
            td #{phone.name}
+           td #{phone.phone_number}

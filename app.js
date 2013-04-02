@@ -15,6 +15,7 @@ var app = express();
 mongoose.connect('mongodb://localhost/mydb');
 require('./models/car');
 require('./models/phonebook');
+
 var Car = mongoose.model("Car");
 var PhoneBook = mongoose.model("PhoneBook");
 

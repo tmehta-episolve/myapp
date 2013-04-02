@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Add New Record
+  div
+    
+    form.form-horizontal(method="post", action='/phonebook/add', enctype="multipart/form-data")
+      .control-group
+        label.control-label(for='name')Name
+        .controls
+          input#title.input-input-xlarge(type='text', name="ame", placeholder='Enter your name')
+      .control-group
+        .controls
+          input(type='submit',value='Save')
