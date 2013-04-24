@@ -6,14 +6,17 @@ block content
   table
    thead
     tr
-     th ID
      th Car Name
      th Color
      th Company
+     th Edit
       tbody
        each car, i in cars
         tr
-         td #{car.pk_id}
          td #{car.car_name}
          td #{car.color}
          td #{car.company}
+         td
+          a(href='/cars/'+car._id+'/edit') Edit
+         td
+          a(href='/cars/'+car._id+'/delete') Delete
