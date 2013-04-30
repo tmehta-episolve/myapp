@@ -8,6 +8,7 @@ var express = require('express')
 //  , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
+//  , fs = require('fs')
   , mongoose = require('mongoose');
 
 var app = express();
@@ -32,6 +33,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(require('stylus').middleware(__dirname + '/public'));
   app.use(express.static(path.join(__dirname, 'public')));
+//  app.set('fileUpload', express.static(path.join(__dirname,'upload')));
 });
 
 app.configure('development', function(){
