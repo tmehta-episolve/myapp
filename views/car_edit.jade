@@ -1,20 +1,35 @@
 extends layout
 
 block content
-  h1= title
-  p #{car_name}
-  form( method="post", action="/cars/editdata", enctype="multipart/form-data" )
-    div
-      span.label Name :
-        input(type="text", name="car_name", id="addCarName", value="#{car_name}")
-    div
-      span.label Color :
-        input(type="text", name="color", id="addCarColor", value="#{color}")
-    div
-      span.label Company :
-        input(type="text", name="company", id="addCarCompany", value="#{company}")
-    input(type="hidden", value="#{_id}", name="id")
-    div#addCarSubmit
-      input(type="submit", value="Save")
-   a(href="/cars")!= "Back to Car List"
+ div.contentTitle= title
+  div
+   div.contetSpacing
+    form( method="post", action="/cars/editdata", enctype="multipart/form-data" )
+      table
+        tr
+          td Name:
+          td
+            input(type="text", name="car_name", id="addCarName", value="#{car_name}")
+        tr
+          td Color:
+          td
+            input(type="text", name="color", id="addCarColor", value="#{color}")
+        tr
+          td Company:
+          td
+             input(type="text", name="company", id="addCarCompany", value="#{company}")
+        tr
+          td Image:
+          td
+            input(type="file", name="car_image")
+        tr
+          td
+            input(type="hidden", value="#{_id}", name="id")
+          td
+             input(type="submit", value="Save")
+        tr
+          td
+             a(href="/cars")!= "Back to Car List"
+          td
+
 

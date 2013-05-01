@@ -3,7 +3,7 @@ var cars = require('./controllers/car');
 var phonebook= require('./controllers/phonebook');
   app.get('/cars', cars.list);
   app.get('/cars/add',cars.add);
-  app.get('/cars/adddata',cars.adddata);
+  app.post('/cars/adddata',cars.adddata);
   app.get('/cars/:id/edit',cars.edit);
   app.post('/cars/editdata',cars.editdata);
   app.get('/cars/:id/delete',cars.remove);

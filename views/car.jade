@@ -1,22 +1,23 @@
 extends layout
 block content
- p #{title}
- div
-  a(href="/cars/add")!= "Add New Car"
-  table
-   thead
-    tr
-     th Car Name
-     th Color
-     th Company
-     th Edit
-      tbody
-       each car, i in cars
-        tr
-         td #{car.car_name}
-         td #{car.color}
-         td #{car.company}
-         td
-          a(href='/cars/'+car._id+'/edit') Edit
-         td
-          a(href='/cars/'+car._id+'/delete') Delete
+ div.contentTitle #{title}
+  div
+   div.contetSpacing
+    a.addnew(href="/cars/add")!= "Add New Car"
+   table
+    thead
+     tr
+      th Car Name
+      th Color
+      th Company
+      th Edit
+       tbody
+        each car, i in cars
+         tr
+          td #{car.car_name}
+          td #{car.color}
+          td #{car.company}
+          td
+           a(href='/cars/'+car._id+'/edit') Edit
+          td
+           a(href='/cars/'+car._id+'/delete') Delete
